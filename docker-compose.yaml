@@ -5,14 +5,10 @@ services:
     container_name: homarr
     restart: unless-stopped
     volumes:
-      - ./homarr/configs:/app/data/configs
-      - ./homarr/icons:/app/public/icons
       - ./homarr/appdata:/appdata
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - TZ=Europe/Madrid
       - SECRET_ENCRYPTION_KEY=99f1b98da9c05bc52af04ffc96ebfb33a82547e3ab0ae2dcbae1a5e0edb3fa34    # se puede generar con `openssl rand -hex 32`      
     ports:
-      - '8200:7575'
-      
-
+      - '8200:7575'  
